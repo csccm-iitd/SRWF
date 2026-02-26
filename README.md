@@ -10,6 +10,7 @@
 
 
 **Scalable Random Wavelet Features** 
+
 Repository containing the official PyTorch implementation of the paper **[Scalable Random Wavelet Features: Efficient Non-Stationary Kernel Approximation with Convergence Guarantees. (ICLR 2026)](https://www.arxiv.org/abs/2602.00987)**
 
 
