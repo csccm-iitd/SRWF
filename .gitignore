@@ -1,0 +1,35 @@
+# Ignore data folders
+data/*
+*/wandb/*
+results
+./logs/*
+.env/
+
+# Hydra outputs
+outputs/
+.hydra/
+
+# WandB
+wandb/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# vscode
+*.vscode
+.qodo
+
+#benchmark_results
+benchmark_results
+mis/
+
+# legacy reference code/results
+main/
