@@ -20,7 +20,7 @@ from srwf.plotting import (
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Generate SRWF paper plots.")
+    parser = argparse.ArgumentParser(description="Generate camera-ready SRWF paper plots.")
     parser.add_argument(
         "--main-results",
         type=Path,
@@ -30,13 +30,13 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--feature-csv",
         type=Path,
-        default=Path("add_path/feature_sweep.csv"),
+        default=Path("/DATA/Sawan_projects/proj_1/WRF_01/results/feature_sweep.csv"),
         help="CSV path for feature RMSE plot.",
     )
     parser.add_argument(
         "--scalability-csv",
         type=Path,
-        default=Path("add_path/scalability_results_with_std (2).csv"),
+        default=Path("/DATA/Sawan_projects/proj_1/WRF_01/results/scalability_results_with_std (2).csv"),
         help="CSV path for scalability plot.",
     )
     parser.add_argument(

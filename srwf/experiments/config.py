@@ -33,11 +33,10 @@ def load_experiment_config(path: Path | str) -> ExperimentRunConfig:
         "notes": raw.get("notes"),
         "env": dict(raw.get("env", {})),
     }
-    extras = {k: v for k, v in raw.items() if k not known}
+    extras = {k: v for k, v in raw.items() if k not in known}
     cfg = ExperimentRunConfig(**known, extras=extras)
     if not cfg.group:
         raise ValueError(f"Config field 'group' is required: {config_path}")
     if not cfg.name:
         raise ValueError(f"Config field 'name' is required: {config_path}")
     return cfg
-

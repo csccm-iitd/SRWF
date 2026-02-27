@@ -38,8 +38,6 @@ The implementation is in Python using PyTorch, and this repository includes exam
 
 ---
 
-## Experiments
-
 ### Data Access
 The datasets used for these experiments can be downloaded from the following Google Drive link:
 [Download Data]()
