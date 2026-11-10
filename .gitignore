@@ -1,36 +1,15 @@
-# Ignore data folders
-data/*
-*/wandb/*
-results
-./logs/*
-.env/
-
-# Hydra outputs
-outputs/
-.hydra/
-
-# WandB
-wandb/
-
-# Python
+/data/
+/results/
 __pycache__/
-*__pycache__/*
-*.pyc
-*.pyo
-*.pyd
-.Python
+*.py[cod]
 *.egg-info/
-
-# Jupyter
 .ipynb_checkpoints/
-
-# vscode
-*.vscode
-.qodo
-
-#benchmark_results
-benchmark_results
-mis/
-
-# legacy reference code/results
-main/
+.pytest_cache/
+.ruff_cache/
+.vscode/
+wandb/
+outputs/
+assets/figures/render/
+assets/figures/anim/
+assets/figures/*.gif
+assets/figures/*.png

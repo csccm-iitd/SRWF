@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "srwf"
+version = "1.1.0"
+description = "Scalable Random Wavelet Features: non-stationary Gaussian processes with exact posteriors at random-feature cost"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Sawan Kumar" }, { name = "Souvik Chakraborty" }]
+requires-python = ">=3.10"
+dependencies = ["torch>=2.1", "numpy>=1.24", "scipy>=1.10"]
+
+[project.optional-dependencies]
+baselines = ["gpytorch>=1.11", "botorch>=0.10"]
+experiments = ["pandas>=2.0", "pyreadr>=0.5"]
+plots = ["matplotlib>=3.7", "imageio-ffmpeg>=0.4", "cartopy>=0.22"]
+dev = ["pytest>=7", "ruff>=0.4"]
+all = ["srwf[baselines,experiments,plots,dev]"]
+
+[project.urls]
+Paper = "https://arxiv.org/abs/2602.00987"
+
+[tool.setuptools.packages.find]
+include = ["srwf*"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501", "E741"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

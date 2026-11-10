@@ -1,0 +1,23 @@
+{
+ "num_features": 1024,
+ "levels": 4,
+ "lowpass": 32,
+ "data_fraction": 0.5,
+ "fourier": 0,
+ "base_scale": 1.0,
+ "wavelet": "mexican_hat",
+ "ard": false,
+ "fixed_noise": 0.0001,
+ "amplitude_prior": null,
+ "members": 1,
+ "acquisition": "ucb",
+ "beta": 2.0,
+ "beta_schedule": 1.0,
+ "steps": 100,
+ "warm_start": false,
+ "n_lattice": 4096,
+ "n_local": 1000,
+ "n_starts": 8,
+ "opt_steps": 60,
+ "lr": 0.02
+}

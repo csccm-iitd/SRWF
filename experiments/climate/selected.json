@@ -1,0 +1,363 @@
+{
+ "rwf": {
+  "temperature": {
+   "kind": "rwf",
+   "config": {
+    "steps": 300,
+    "lr": 0.05,
+    "centres": "sphere",
+    "solver": "dual",
+    "num_features": 24576,
+    "levels": 4,
+    "restarts": 3
+   },
+   "candidate": "D24k-J4-sphere-r3",
+   "val_crps": 0.8503803050626683
+  },
+  "precipitation": {
+   "kind": "rwf",
+   "config": {
+    "steps": 300,
+    "lr": 0.05,
+    "centres": "sphere",
+    "solver": "dual",
+    "num_features": 49152,
+    "levels": 4
+   },
+   "candidate": "D48k-J4-sphere",
+   "val_crps": 0.6773988659576842
+  },
+  "surface_pressure": {
+   "kind": "rwf",
+   "config": {
+    "steps": 300,
+    "lr": 0.05,
+    "centres": "sphere",
+    "solver": "dual",
+    "num_features": 24576,
+    "levels": 5
+   },
+   "candidate": "D24k-J5-sphere",
+   "val_crps": 0.8413449713049455
+  },
+  "humidity": {
+   "kind": "rwf",
+   "config": {
+    "steps": 300,
+    "lr": 0.05,
+    "centres": "sphere",
+    "solver": "dual",
+    "num_features": 49152,
+    "levels": 4
+   },
+   "candidate": "D48k-J4-sphere",
+   "val_crps": 0.47677676390686197
+  },
+  "u_wind": {
+   "kind": "rwf",
+   "config": {
+    "steps": 300,
+    "lr": 0.05,
+    "centres": "sphere",
+    "solver": "dual",
+    "num_features": 24576,
+    "levels": 4,
+    "members": 4
+   },
+   "candidate": "D24k-J4-sphere-x4",
+   "val_crps": 2.291250841672575
+  },
+  "v_wind": {
+   "kind": "rwf",
+   "config": {
+    "steps": 300,
+    "lr": 0.05,
+    "centres": "sphere",
+    "solver": "dual",
+    "num_features": 24576,
+    "levels": 4,
+    "restarts": 3
+   },
+   "candidate": "D24k-J4-sphere-r3",
+   "val_crps": 2.5958952328113085
+  }
+ },
+ "rwf-adaptive": {
+  "temperature": {
+   "kind": "rwf",
+   "config": {
+    "steps": 300,
+    "lr": 0.05,
+    "centres": "sphere",
+    "solver": "dual",
+    "num_features": 49152,
+    "levels": 4,
+    "anchors": 64
+   },
+   "candidate": "D48k-J4-sphere-a64",
+   "val_crps": 0.79587252211128
+  },
+  "precipitation": {
+   "kind": "rwf",
+   "config": {
+    "steps": 300,
+    "lr": 0.05,
+    "centres": "sphere",
+    "solver": "dual",
+    "num_features": 49152,
+    "levels": 4,
+    "anchors": 32
+   },
+   "candidate": "D48k-J4-sphere-a32",
+   "val_crps": 0.6741125430959674
+  },
+  "surface_pressure": {
+   "kind": "rwf",
+   "config": {
+    "steps": 300,
+    "lr": 0.05,
+    "centres": "sphere",
+    "solver": "dual",
+    "num_features": 49152,
+    "levels": 4,
+    "anchors": 64
+   },
+   "candidate": "D48k-J4-sphere-a64",
+   "val_crps": 0.7801183261636502
+  },
+  "humidity": {
+   "kind": "rwf",
+   "config": {
+    "steps": 300,
+    "lr": 0.05,
+    "centres": "sphere",
+    "solver": "dual",
+    "num_features": 49152,
+    "levels": 4,
+    "anchors": 32
+   },
+   "candidate": "D48k-J4-sphere-a32",
+   "val_crps": 0.46692238483137805
+  },
+  "u_wind": {
+   "kind": "rwf",
+   "config": {
+    "steps": 300,
+    "lr": 0.05,
+    "centres": "sphere",
+    "solver": "dual",
+    "num_features": 49152,
+    "levels": 4,
+    "anchors": 64
+   },
+   "candidate": "D48k-J4-sphere-a64",
+   "val_crps": 2.188732443039491
+  },
+  "v_wind": {
+   "kind": "rwf",
+   "config": {
+    "steps": 300,
+    "lr": 0.05,
+    "centres": "sphere",
+    "solver": "dual",
+    "num_features": 49152,
+    "levels": 4,
+    "anchors": 64
+   },
+   "candidate": "D48k-J4-sphere-a64",
+   "val_crps": 2.5088369089943328
+  }
+ },
+ "rff": {
+  "temperature": {
+   "kind": "rff",
+   "config": {
+    "steps": 300,
+    "lr": 0.05,
+    "num_features": 24576
+   },
+   "candidate": "D24k",
+   "val_crps": 1.035968302638611
+  },
+  "precipitation": {
+   "kind": "rff",
+   "config": {
+    "steps": 300,
+    "lr": 0.05,
+    "num_features": 16384
+   },
+   "candidate": "D16k",
+   "val_crps": 0.7119890236328917
+  },
+  "surface_pressure": {
+   "kind": "rff",
+   "config": {
+    "steps": 300,
+    "lr": 0.05,
+    "num_features": 16384
+   },
+   "candidate": "D16k",
+   "val_crps": 1.6453210888240992
+  },
+  "humidity": {
+   "kind": "rff",
+   "config": {
+    "steps": 300,
+    "lr": 0.05,
+    "num_features": 24576
+   },
+   "candidate": "D24k",
+   "val_crps": 0.5502657574800143
+  },
+  "u_wind": {
+   "kind": "rff",
+   "config": {
+    "steps": 300,
+    "lr": 0.05,
+    "num_features": 24576
+   },
+   "candidate": "D24k",
+   "val_crps": 2.718400402315991
+  },
+  "v_wind": {
+   "kind": "rff",
+   "config": {
+    "steps": 300,
+    "lr": 0.05,
+    "num_features": 24576
+   },
+   "candidate": "D24k",
+   "val_crps": 2.6629634818993067
+  }
+ },
+ "svgp": {
+  "temperature": {
+   "kind": "svgp",
+   "config": {
+    "epochs": 1000,
+    "batch_size": 1024,
+    "lr": 0.01,
+    "num_inducing": 1024
+   },
+   "candidate": "M1024",
+   "val_crps": 1.0592415261986623
+  },
+  "precipitation": {
+   "kind": "svgp",
+   "config": {
+    "epochs": 1000,
+    "batch_size": 1024,
+    "lr": 0.01,
+    "num_inducing": 1024
+   },
+   "candidate": "M1024",
+   "val_crps": 0.7211714196922692
+  },
+  "surface_pressure": {
+   "kind": "svgp",
+   "config": {
+    "epochs": 1000,
+    "batch_size": 1024,
+    "lr": 0.01,
+    "num_inducing": 1024
+   },
+   "candidate": "M1024",
+   "val_crps": 1.6683364110989038
+  },
+  "humidity": {
+   "kind": "svgp",
+   "config": {
+    "epochs": 1000,
+    "batch_size": 1024,
+    "lr": 0.01,
+    "num_inducing": 1024
+   },
+   "candidate": "M1024",
+   "val_crps": 0.5545245448462746
+  },
+  "u_wind": {
+   "kind": "svgp",
+   "config": {
+    "epochs": 1000,
+    "batch_size": 1024,
+    "lr": 0.01,
+    "num_inducing": 1024
+   },
+   "candidate": "M1024",
+   "val_crps": 2.851853321236628
+  },
+  "v_wind": {
+   "kind": "svgp",
+   "config": {
+    "epochs": 1000,
+    "batch_size": 1024,
+    "lr": 0.01,
+    "num_inducing": 1024
+   },
+   "candidate": "M1024",
+   "val_crps": 2.6287260679861895
+  }
+ },
+ "exact": {
+  "temperature": {
+   "kind": "exact",
+   "config": {
+    "kernel": "matern2.5",
+    "steps": 200,
+    "lr": 0.05
+   },
+   "candidate": "matern2.5",
+   "val_crps": 0.8911985715737193
+  },
+  "precipitation": {
+   "kind": "exact",
+   "config": {
+    "kernel": "matern2.5",
+    "steps": 200,
+    "lr": 0.05
+   },
+   "candidate": "matern2.5",
+   "val_crps": 0.6764752625657863
+  },
+  "surface_pressure": {
+   "kind": "exact",
+   "config": {
+    "kernel": "matern2.5",
+    "steps": 200,
+    "lr": 0.05
+   },
+   "candidate": "matern2.5",
+   "val_crps": 1.018464191221281
+  },
+  "humidity": {
+   "kind": "exact",
+   "config": {
+    "kernel": "matern2.5",
+    "steps": 200,
+    "lr": 0.05
+   },
+   "candidate": "matern2.5",
+   "val_crps": 0.49198934450645704
+  },
+  "u_wind": {
+   "kind": "exact",
+   "config": {
+    "kernel": "matern2.5",
+    "steps": 200,
+    "lr": 0.05
+   },
+   "candidate": "matern2.5",
+   "val_crps": 2.3882642611605553
+  },
+  "v_wind": {
+   "kind": "exact",
+   "config": {
+    "kernel": "matern2.5",
+    "steps": 200,
+    "lr": 0.05
+   },
+   "candidate": "matern2.5",
+   "val_crps": 2.400811045451807
+  }
+ }
+}

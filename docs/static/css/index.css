@@ -1,0 +1,623 @@
+:root {
+  --rwf: #eb6834;
+  --rwf-deep: #c94f1d;
+  --rwf-soft: #fdf1ea;
+  --rwf-glow: #ff9a6b;
+  --base: #2a78d6;
+  --ink: #1d2433;
+  --ink-2: #3f4756;
+  --muted: #6b7280;
+  --rule: #e6e8ec;
+  --paper: #ffffff;
+  --mist: #f6f7f9;
+  --night: #0b1524;
+  --night-2: #13233b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+  color: var(--ink-2);
+  background-color: var(--paper);
+}
+
+.publication-title,
+.publication-subtitle,
+.publication-authors,
+.title,
+.teaser-labels,
+.hl-num,
+.theory h3,
+.venue-badge,
+.copy-bibtex-btn {
+  font-family: 'Google Sans', 'Noto Sans', sans-serif;
+}
+
+.publication-header .hero-body {
+  padding: 4.5rem 1.5rem 2rem;
+}
+
+.publication-title {
+  font-weight: 700 !important;
+  font-size: 3.4rem !important;
+  letter-spacing: -0.02em;
+  line-height: 1.1 !important;
+  color: var(--ink) !important;
+  margin-bottom: 0.9rem !important;
+}
+
+.publication-title .accent {
+  color: var(--rwf);
+}
+
+.publication-subtitle {
+  font-size: 1.45rem;
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--muted);
+  max-width: 40rem;
+  margin: 0 auto 1.6rem;
+}
+
+.publication-authors {
+  color: var(--ink-2);
+}
+
+.publication-authors + .publication-authors {
+  color: var(--muted);
+  font-size: 1.05rem !important;
+}
+
+.author-block {
+  display: inline-block;
+  margin: 0 0.45rem;
+}
+
+.publication-venue {
+  margin-top: 0.9rem;
+}
+
+.venue-badge {
+  display: inline-block;
+  padding: 0.28rem 0.85rem;
+  border: 1px solid var(--rwf);
+  border-radius: 999px;
+  color: var(--rwf-deep);
+  background: var(--rwf-soft);
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+}
+
+.publication-links {
+  margin-top: 1.4rem;
+}
+
+.link-block a {
+  margin: 5px 3px;
+}
+
+.button.is-dark {
+  background-color: var(--ink);
+  transition: background-color 0.2s ease;
+}
+
+.button.is-dark:hover {
+  background-color: #000;
+}
+
+.button.is-dark .icon svg {
+  width: 1.05em;
+  height: 1.05em;
+  fill: currentColor;
+}
+
+.teaser.is-night {
+  background: radial-gradient(ellipse 70% 90% at 50% 45%, var(--night-2) 0%, var(--night) 70%);
+  color: #cfd6e1;
+}
+
+.teaser .hero-body {
+  padding: 2.75rem 1.5rem 2.5rem;
+}
+
+.teaser-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.teaser-labels {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.3;
+  color: #e3e8ef;
+  margin-top: 0.6rem;
+}
+
+.teaser-labels span {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.92rem;
+  color: #95a1b3;
+}
+
+.teaser-labels .ours,
+.teaser-labels .ours span {
+  color: var(--rwf-glow);
+}
+
+.teaser-caption {
+  margin: 1.6rem auto 0;
+  max-width: 46rem;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #b9c3d1;
+}
+
+.highlights {
+  padding: 2.25rem 1.5rem 2.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: start;
+  gap: 1.5rem;
+}
+
+.highlight {
+  padding-left: 1rem;
+  border-left: 2px solid var(--rwf);
+}
+
+.hl-num {
+  font-size: 2.1rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.hl-num sup {
+  font-size: 0.5em;
+  vertical-align: super;
+}
+
+.hl-num span {
+  font-size: 0.55em;
+  font-weight: 500;
+  color: var(--rwf-deep);
+}
+
+.hl-text {
+  margin-top: 0.35rem;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.section {
+  padding: 4rem 1.5rem;
+}
+
+.section.is-light {
+  background-color: var(--mist);
+}
+
+.title.is-3 {
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 2rem !important;
+}
+
+.title.is-3::after {
+  content: '';
+  display: block;
+  width: 2.5rem;
+  height: 3px;
+  margin: 0.8rem auto 0;
+  border-radius: 2px;
+  background: var(--rwf);
+}
+
+.title.is-4 {
+  font-weight: 500;
+  font-size: 1.45rem;
+  color: var(--ink);
+  margin-top: 3rem;
+  margin-bottom: 0.9rem !important;
+}
+
+.title.is-4::before {
+  content: '';
+  display: inline-block;
+  width: 0.55rem;
+  height: 0.55rem;
+  margin-right: 0.6rem;
+  border-radius: 2px;
+  background: var(--rwf);
+  vertical-align: 0.18em;
+}
+
+#climate .title.is-4 {
+  margin-top: 0.5rem;
+}
+
+.content.has-text-justified p {
+  line-height: 1.75;
+}
+
+.figure-block {
+  margin: 2rem 0 0.5rem;
+}
+
+.figure-block img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.figure-block img.card-img {
+  padding: 0.9rem;
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(17, 24, 39, 0.04), 0 8px 24px -12px rgba(17, 24, 39, 0.12);
+}
+
+.figure-block .caption,
+.table-caption {
+  margin-top: 0.75rem;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.anim-pair {
+  margin-top: 1.25rem;
+}
+
+.anim-pair .figure-block {
+  margin-top: 0.75rem;
+}
+
+.c-rwf {
+  color: var(--rwf-deep);
+  font-weight: 600;
+}
+
+.c-rff {
+  color: var(--base);
+  font-weight: 600;
+}
+
+.table-container,
+.table-container:not(:last-child) {
+  margin: 1.1rem 0 0;
+}
+
+.table.results {
+  width: 100%;
+  font-size: 0.92rem;
+  font-variant-numeric: tabular-nums;
+  background: transparent;
+  color: var(--ink-2);
+  margin-bottom: 0;
+}
+
+.table.results th,
+.table.results td {
+  padding: 0.5em 0.75em;
+  white-space: nowrap;
+  vertical-align: middle;
+  border-color: var(--rule);
+}
+
+.table.results thead th {
+  font-weight: 600;
+  color: var(--ink);
+  border-bottom: 1.5px solid var(--ink);
+  text-align: right;
+}
+
+.table.results td {
+  text-align: right;
+  border-width: 0 0 1px;
+}
+
+.table.results th:first-child,
+.table.results td:first-child {
+  text-align: left;
+}
+
+.table.results thead th small {
+  display: block;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.table.results td small {
+  color: #9aa1ad;
+}
+
+.table.results tr.ours td {
+  background-color: var(--rwf-soft);
+  color: var(--ink);
+}
+
+.table.results tr.ours td:first-child {
+  font-weight: 600;
+  color: var(--rwf-deep);
+  box-shadow: inset 3px 0 0 var(--rwf);
+}
+
+.table.results td b {
+  color: var(--ink);
+}
+
+.table.results tbody tr:last-child td {
+  border-bottom: 1.5px solid var(--ink);
+}
+
+.table.results .lit td:first-child {
+  color: var(--muted);
+}
+
+.theory.columns {
+  margin-top: 0.5rem;
+}
+
+.thm-media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px -14px rgba(17, 24, 39, 0.18);
+}
+
+.thm-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.thm-media.is-missing {
+  background: repeating-linear-gradient(135deg, #f2f3f6 0 10px, #eceef2 10px 20px);
+  box-shadow: none;
+}
+
+.thm-media.is-missing img {
+  display: none;
+}
+
+.theory h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+}
+
+.theory p {
+  font-size: 0.97rem;
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+
+.bibtex-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.bibtex-header .title {
+  margin-bottom: 0 !important;
+  color: var(--ink);
+}
+
+.copy-bibtex-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  padding: 0.35rem 0.95rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.copy-bibtex-btn:hover {
+  border-color: var(--rwf);
+  color: var(--rwf-deep);
+}
+
+.copy-bibtex-btn svg {
+  width: 0.9em;
+  height: 0.9em;
+  fill: currentColor;
+}
+
+#bibtex-code {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  padding: 1.25rem 1.5rem;
+  background-color: var(--mist);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--rwf);
+  border-radius: 8px;
+  color: var(--ink);
+  white-space: pre;
+  overflow-x: auto;
+}
+
+#bibtex-code code {
+  background: none;
+  color: inherit;
+  padding: 0;
+  font-size: inherit;
+}
+
+.footer {
+  padding: 2rem 1.5rem;
+  background: var(--paper);
+  border-top: 1px solid var(--rule);
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.footer a {
+  color: var(--rwf-deep);
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.reveal-on .reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-on .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal-on .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content.has-text-justified {
+    text-align: left !important;
+  }
+
+  .publication-header .hero-body {
+    padding: 2.75rem 1rem 1.25rem;
+  }
+
+  .publication-title {
+    font-size: 2.2rem !important;
+  }
+
+  .publication-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .publication-authors {
+    font-size: 1.05rem !important;
+  }
+
+  .section {
+    padding: 3rem 1rem;
+  }
+
+  .teaser .hero-body {
+    padding: 1.75rem 0.5rem 1.75rem;
+  }
+
+  .teaser-labels {
+    font-size: 0.72rem;
+  }
+
+  .teaser-labels span {
+    font-size: 0.7rem;
+  }
+
+  .teaser-caption {
+    font-size: 0.95rem;
+    padding: 0 0.5rem;
+  }
+
+  .highlights {
+    padding: 1.75rem 1rem 2rem;
+  }
+
+  .highlight-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem 1rem;
+  }
+
+  .hl-num {
+    font-size: 1.6rem;
+  }
+
+  .hl-text {
+    font-size: 0.82rem;
+  }
+
+  .title.is-3 {
+    font-size: 1.65rem;
+  }
+
+  .title.is-4 {
+    font-size: 1.25rem;
+  }
+
+  .figure-block img.card-img {
+    padding: 0.4rem;
+    border-radius: 8px;
+  }
+
+  .table.results {
+    font-size: 0.82rem;
+  }
+
+  #bibtex-code {
+    font-size: 0.75rem;
+    padding: 1rem;
+  }
+}
+
+.venue {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: #2f3a4b;
+}
+
+.venue img {
+  height: 42px;
+  width: auto;
+}
+
+.venue span {
+  font-family: 'Google Sans', 'Noto Sans', sans-serif;
+  font-size: 1.9rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  padding-top: 0.15rem;
+}
+
+.results thead tr.sub th {
+  font-weight: 400;
+  font-size: 0.8em;
+  color: #7a7a7a;
+  padding-top: 0;
+}

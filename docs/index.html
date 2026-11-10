@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scalable Random Wavelet Features</title>
+  <meta name="description" content="Random wavelet features: unbiased, uniformly convergent approximations of non-stationary kernels for scalable Gaussian processes. ICLR 2026.">
+  <meta name="author" content="Sawan Kumar, Souvik Chakraborty">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Scalable Random Wavelet Features">
+  <meta property="og:description" content="Unbiased, uniformly convergent approximations of non-stationary kernels for scalable Gaussian processes. ICLR 2026.">
+  <meta property="og:url" content="https://csccm-iitd.github.io/SRWF/">
+  <meta name="citation_title" content="Scalable Random Wavelet Features: Efficient Non-Stationary Kernel Approximation with Convergence Guarantees">
+  <meta name="citation_author" content="Kumar, Sawan">
+  <meta name="citation_author" content="Chakraborty, Souvik">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_conference_title" content="International Conference on Learning Representations">
+  <meta name="citation_pdf_url" content="https://proceedings.iclr.cc/paper_files/paper/2026/file/ae292fe7ac000cb8e9e08ddc10d969a4-Paper-Conference.pdf">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500,700|Noto+Sans:400,400i,600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+</head>
+<body>
+
+<section class="hero publication-header">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Scalable <span class="accent">Random Wavelet</span> Features</h1>
+          <p class="publication-subtitle">Efficient Non-Stationary Kernel Approximation with Convergence Guarantees</p>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Sawan Kumar</span>
+            <span class="author-block">Souvik Chakraborty</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Indian Institute of Technology Delhi</span>
+          </div>
+          <div class="publication-venue"><a class="venue" href="https://iclr.cc/Conferences/2026"><img src="static/img/iclr.svg" alt="ICLR" width="106" height="32"><span>2026</span></a></div>
+          <div class="publication-links">
+            <span class="link-block">
+              <a href="https://proceedings.iclr.cc/paper_files/paper/2026/file/ae292fe7ac000cb8e9e08ddc10d969a4-Paper-Conference.pdf" target="_blank" rel="noopener" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><svg viewBox="0 0 384 512" aria-hidden="true"><path d="M181.9 256.1c-5-16-4.9-46.9-2-46.9 8.4 0 7.6 36.9 2 46.9zm-1.7 47.2c-7.7 20.2-17.3 43.3-28.4 62.7 18.3-7 39-17.2 62.9-21.9-12.7-9.6-24.9-23.4-34.5-40.8zM86.1 428.1c0 .8 13.2-5.4 34.9-40.2-6.7 6.3-29.1 24.5-34.9 40.2zM248 160h136v328c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V24C0 10.7 10.7 0 24 0h200v136c0 13.2 10.8 24 24 24zm-8 171.8c-20-12.2-33.3-29-42.7-53.8 4.5-18.5 11.6-46.6 6.2-64.2-4.7-29.4-42.4-26.5-47.8-6.8-5 18.3-.4 44.1 8.1 77-11.6 27.6-28.7 64.6-40.8 85.8-.1 0-.1.1-.2.1-27.1 13.9-73.6 44.5-54.5 68 5.6 6.9 16 10 21.5 10 17.9 0 35.7-18 61.1-61.8 25.8-8.5 54.1-19.1 79-23.2 21.7 11.8 47.1 19.5 64 19.5 29.2 0 31.2-32 19.7-43.4-13.9-13.6-54.3-9.7-73.6-7.2zM377 105L279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-74.1 255.3c4.1-2.7-2.5-11.9-42.8-9 37.1 15.8 42.8 9 42.8 9z"/></svg></span>
+                <span>Paper</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="https://arxiv.org/abs/2602.00987" target="_blank" rel="noopener" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><svg viewBox="0 0 448 512" aria-hidden="true"><path transform="matrix(1 0 0 -1 0 448)" d="M62.2578 439.994v0.000976563c8.7373 -0.208008 17.0049 -10.248 17.0049 -10.248l139.339 -133.672l101.071 91.6465l0.19043 0.172852l0.203125 0.166016c4.90625 4.81934 11.3877 7.70312 18.252 8.12207l0.00585938 0.0185547c1.05957 -0.00195312 2.11816 -0.0712891 3.16699 -0.211914c10.166 -2.4209 18.7891 -9.11816 23.6465 -18.3701c4.01758 -9.88574 0.291016 -17.6826 -7.50195 -27.8057l-0.102539 -0.139648l-0.115234 -0.132812l-87.1963 -102.987l25.2568 -24.2285c17.0928 -15.6211 17.002 -42.5723 -0.197266 -58.0762l-23.0615 -21.4434l128.783 -155.019c6.05273 -6.27637 8.49609 -15.2041 6.48145 -23.6885c-2.51465 -9.04297 -9.44238 -16.1914 -18.4004 -18.9902c-2.37793 -0.728516 -4.84863 -1.10254 -7.33496 -1.1084c-6.88184 0.109375 -13.4678 2.83105 -18.4189 7.61035l-146.593 139.609l-95.1221 -88.4375c-3.72852 -4.63086 -9.30664 -7.38672 -15.249 -7.53516c-9.27832 -0.0908203 -17.6777 5.47754 -21.209 14.0586c-3.46777 8.33105 0.375 19.9385 6.58398 26.5527l79.9766 98.2344l-28.6631 27.3008c-19.292 19.2861 -18.4004 47.1162 2.33984 67.8516l24.6191 23.0391s-111.243 133.583 -122.178 149.671c-7.46582 10.6934 -9.91016 16.4219 -6.50586 24.5918c3.57715 8.33398 11.8613 13.6562 20.9277 13.4473zM338.319 388.78v-0.0214844c-5.18945 -0.473633 -10.0342 -2.79199 -13.6592 -6.53516l-100.681 -91.3047l40.8809 -39.2197l86.8916 102.64c8.05957 10.4746 8.75195 14.9609 6.50488 20.4824c-3.83691 6.77344 -10.2119 11.7451 -17.7188 13.8105c-0.735352 0.0976562 -1.47754 0.145508 -2.21875 0.148438zM175.076 246.873l-24.623 -23.041c-16.8564 -16.8564 -19.4756 -39.8701 -2.15918 -57.1865l220.151 -209.691c3.5752 -3.45898 8.32031 -5.44336 13.293 -5.56152c1.75293 0.00292969 3.49512 0.266602 5.1709 0.78418c6.58887 2.0752 11.6631 7.36914 13.4629 14.0381c1.83984 6.0957 -0.860352 11.5049 -5.18066 16.9141z"/></svg></span>
+                <span>arXiv</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="https://github.com/csccm-iitd/SRWF" target="_blank" rel="noopener" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><svg viewBox="0 0 496 512" aria-hidden="true"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                <span>Code</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="#BibTeX" class="button is-normal is-rounded is-dark">
+                <span class="icon"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"/></svg></span>
+                <span>BibTeX</span>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser is-night">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="teaser-figure">
+        <img src="static/img/globe.webp" width="1280" height="340" alt="Four rotating globes: ERA5 surface pressure with the 25% of grid cells used as stations, and the absolute reconstruction errors of random wavelet features, an exact Gaussian process and random Fourier features.">
+        <div class="teaser-labels" aria-hidden="true">
+          <div>ERA5 surface pressure<span>25% stations</span></div>
+          <div class="ours">RWF error<span>2.11 hPa</span></div>
+          <div>Exact GP error<span>2.14 hPa</span></div>
+          <div>RFF error<span>3.47 hPa</span></div>
+        </div>
+      </div>
+      <p class="teaser-caption has-text-centered">
+        Reconstructing global surface pressure from a quarter of the grid. Over the 2005 test set, random wavelet features have 17% lower error than an exact Gaussian process and 53% lower than random Fourier features, at random-feature cost (15 January 2005 shown; area-weighted RMSE on held-out cells).
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="highlights">
+  <div class="container is-max-desktop">
+    <div class="highlight-grid">
+      <div class="highlight reveal"><div class="hl-num">1.8<span>M points</span></div><div class="hl-text">conditioned exactly in one pass, competitive with state-of-the-art GP solvers and up to 45× faster</div></div>
+      <div class="highlight reveal"><div class="hl-num">Every<span> <i>N</i></span></div><div class="hl-text">a shallow RWF GP beats residual deep GPs on the sphere in test log-likelihood</div></div>
+      <div class="highlight reveal"><div class="hl-num">5<span> of 6</span></div><div class="hl-text">ERA5 climate fields with the best or tied-best error, up to 17% below an exact GP</div></div>
+      <div class="highlight reveal"><div class="hl-num">2<sup>nd</sup><span> of 13</span></div><div class="hl-text">on the Heaton satellite benchmark by RMSE, and first on interval score</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Random Fourier features made Gaussian processes scale to large datasets, but only for stationary kernels, which assume the same smoothness everywhere in the input space. Most real signals are not like that: they are smooth in some regions and change sharply in others. We introduce random wavelet features, which draw wavelet atoms at random locations and scales and therefore capture structure that is local in both space and frequency. They give unbiased, uniformly convergent approximations of a broad class of non-stationary kernels, with positive definiteness guaranteed for any non-negative weighting of locations and scales. Gaussian-process regression with these features keeps exact posterior inference while its cost grows only linearly with the number of observations, the same as random Fourier features. Across climate-field reconstruction on the sphere, the satellite land-surface temperature benchmark, large-scale regression with up to 1.8 million points and Bayesian optimisation, random wavelet features outperform exact Gaussian processes on most climate fields and deep Gaussian processes on the sphere, rank among the best specialised spatial methods, are competitive with state-of-the-art scalable GP solvers, and are more accurate than random Fourier features on every regression benchmark at the same feature count.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">Stationary and non-stationary kernels</h2>
+        <div class="content has-text-justified">
+          <p>
+            A stationary kernel depends only on the offset between two inputs. It therefore imposes one length-scale and one roughness on the whole domain: its covariance matrix is constant along every diagonal, every slice has the same shape, and every prior sample is equally rough everywhere. Real fields rarely behave this way. Random Fourier features rely on this translation invariance, so they cannot represent a kernel whose correlation length changes from place to place, and exact non-stationary Gaussian processes scale cubically with the data.
+          </p>
+        </div>
+        <div class="figure-block reveal">
+          <img class="card-img" src="static/img/stationarity.png" width="1088" height="471" loading="lazy" alt="Top row, stationary kernel: a constant-width covariance band, identical kernel slices and prior samples with uniform roughness. Bottom row, non-stationary random wavelet kernel: a band that widens across the domain, slices that widen, and samples that are rough on the left and smooth on the right. Right: a world map of the day-to-day change of temperature, small in the tropics and large at high latitudes.">
+          <p class="caption"><span class="c-rff">Stationary</span> and <span class="c-rwf">non-stationary</span> kernels: covariance matrix, kernel slices at three locations and prior samples. Right: the day-to-day change of ERA5 near-surface temperature varies about tenfold between the tropics and high latitudes, so no single global smoothness fits it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">Random wavelet features</h2>
+        <div class="content has-text-justified">
+          <p>
+            A wavelet atom is a shifted and dilated copy of one mother wavelet, such as the Mexican hat or the Morlet wavelet. Where a Fourier feature is a sinusoid that extends over the whole domain, an atom is localised in space and in frequency. We define the kernel as the average product of atoms evaluated at two inputs, taken over a distribution of locations and scales. Because it is built from products, it is positive definite for every non-negative weighting, and the weighting may vary across the domain: where fine scales carry more mass the kernel narrows and the prior becomes rough, and elsewhere it stays broad and smooth.
+          </p>
+          <p>
+            Drawing <i>D</i> atoms at random locations and scales gives a finite feature map whose inner products are an unbiased estimate of this kernel. The Gaussian process then becomes a Bayesian model over the feature weights, and its posterior mean, predictive variance and function samples follow in closed form. Training is a single solve whose cost grows linearly with the number of observations; at the same feature count it needs the same arithmetic as random Fourier features.
+          </p>
+        </div>
+        <div class="figure-block reveal">
+          <img class="card-img" src="static/img/features_2d.png" width="1088" height="373" loading="lazy" alt="Left: random Fourier features are global plane waves and induce the same kernel shape at every location. Right: random wavelet features are localised atoms at many scales, and the kernel they induce narrows inside a rough region.">
+          <p class="caption">Individual features (top) and the kernels they induce (bottom). <span class="c-rff">Fourier features</span> are global waves and give one kernel shape everywhere; <span class="c-rwf">wavelet features</span> are localised atoms at many scales, and the kernel narrows inside the rough region (dashed).</p>
+        </div>
+        <div class="columns anim-pair reveal">
+          <div class="column">
+            <div class="figure-block">
+              <img src="static/img/kernel_morph.webp" width="660" height="330" loading="lazy" alt="Animation: an anchor point travels around a square domain. The random Fourier feature kernel keeps the same shape; the random wavelet kernel tightens when the anchor enters a rough region.">
+              <p class="caption">The kernel around a moving anchor point. <span class="c-rff">RFF</span> keeps one shape everywhere; <span class="c-rwf">RWF</span> tightens inside the rough region.</p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="figure-block">
+              <img src="static/img/multires.webp" width="880" height="462" loading="lazy" alt="Animation: a posterior fit that improves as wavelet octaves switch on from coarse to fine; fine atoms activate only at a localised burst. Below, random Fourier features smooth the burst away.">
+              <p class="caption">The <span class="c-rwf">RWF</span> posterior as wavelet octaves switch on, coarse to fine; fine atoms activate only at the burst. Below, <span class="c-rff">RFF</span> with the same data and feature count.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Results</h2>
+
+    <div id="climate">
+      <h3 class="title is-4">Global field reconstruction</h3>
+      <div class="content has-text-justified">
+        <p>ERA5 fields on a 48 × 96 grid are reconstructed from 25% of the cells (1,152 stations) and scored on the rest. Inputs are positions on the unit sphere, plus orography and a land flag. Settings are chosen on 2004; the test covers 8 snapshots in 2005 with 3 station draws each.</p>
+      </div>
+      <div class="table-container reveal">
+        <table class="table results" id="climate-table">
+          <thead>
+            <tr><th>Area-weighted RMSE</th><th>Temperature<small>K</small></th><th>Precipitation<small>log mm</small></th><th>Pressure<small>hPa</small></th><th>Humidity<small>g/kg</small></th><th>Zonal wind<small>m/s</small></th><th>Merid. wind<small>m/s</small></th></tr>
+          </thead>
+          <tbody>
+            <tr><td>SVGP, <i>M</i> = 1024</td><td>2.08</td><td>1.28</td><td>3.54</td><td>1.07</td><td>5.18</td><td>5.22</td></tr>
+            <tr><td>RFF, same features and solver</td><td>2.07</td><td>1.28</td><td>4.20</td><td>1.06</td><td>5.30</td><td>5.41</td></tr>
+            <tr><td>Exact GP</td><td>1.82</td><td><b>1.21</b></td><td>2.38</td><td>0.97</td><td>4.60</td><td><b>4.92</b></td></tr>
+            <tr class="ours"><td>RWF</td><td><b>1.71</b></td><td><b>1.21</b></td><td>1.98</td><td><b>0.93</b></td><td><b>4.49</b></td><td>5.25</td></tr>
+            <tr class="ours"><td>RWF, adaptive octave weights</td><td>1.73</td><td>1.22</td><td><b>1.91</b></td><td>0.94</td><td>4.50</td><td>5.45</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-caption">One RWF fit takes 8–30 s on one GPU with 24k–48k features, and some fields average up to four feature draws; and its 95% intervals cover 92–94% of held-out cells. The adaptive variant has the best CRPS on temperature, pressure, humidity and zonal wind. Settings for every method are chosen on 2004 and evaluated once on 2005.</p>
+    </div>
+
+    <div id="sphere">
+      <h3 class="title is-4">Irregular functions on the sphere</h3>
+      <div class="content has-text-justified">
+        <p>The S<sup>2</sup> regression benchmark of residual deep GPs on manifolds (Wyrwal et al., 2025): a function with singular points at the pole and on the equator, observed with noise on a Fibonacci lattice. All baselines are re-run with the authors' code; a single shallow RWF GP fits in 4–40 s.</p>
+      </div>
+      <div class="figure-block reveal">
+        <img class="card-img" src="static/img/sphere_irregular.webp" width="816" height="280" loading="lazy" alt="Rotating spheres: the target function, the RWF posterior mean and its posterior standard deviation, which concentrates near the singular points.">
+        <p class="caption">Target, RWF posterior mean and posterior standard deviation from 400 points. Uncertainty concentrates where the function is singular.</p>
+      </div>
+      <div class="table-container reveal">
+        <table class="table results">
+          <thead>
+            <tr><th>Test NLPD</th><th><i>N</i> = 100</th><th>200</th><th>400</th><th>800</th><th>1600</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Residual GP, one layer</td><td>−1.32</td><td>−1.42</td><td>−1.46</td><td>−1.47</td><td>−1.47</td></tr>
+            <tr><td>Residual deep GP, best depth</td><td>−1.32</td><td>−1.42</td><td>−1.83</td><td>−2.37</td><td>−2.61</td></tr>
+            <tr><td>Exact Matérn GP</td><td>−1.34</td><td>−1.67</td><td>−2.09</td><td>−2.32</td><td>−2.52</td></tr>
+            <tr class="ours"><td>RWF</td><td><b>−1.60</b></td><td><b>−2.04</b></td><td><b>−2.31</b></td><td><b>−2.75</b></td><td><b>−2.88</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-caption">Mean over 5 seeds, 5,000 test points. Deep-GP depth (1–5) is the best on test; RWF settings are chosen on a validation split of each training set. Test MSE at <i>N</i> = 1600: RWF 3.2, deep GP 3.6, exact GP 3.6 (×10<sup>−4</sup>).</p>
+    </div>
+
+    <div id="heaton">
+      <h3 class="title is-4">Satellite land-surface temperature</h3>
+      <div class="content has-text-justified">
+        <p>The spatial-statistics competition of Heaton et al. (2019): 105,569 observations and 42,740 held-out cells, against methods designed for large spatial data.</p>
+      </div>
+      <div class="table-container reveal">
+        <table class="table results">
+          <thead>
+            <tr><th>Method</th><th>MAE</th><th>RMSE</th><th>CRPS</th><th>Interval score</th><th>Coverage</th></tr>
+          </thead>
+          <tbody>
+            <tr class="lit"><td>SPDE †</td><td><b>1.10</b></td><td><b>1.53</b></td><td><b>0.83</b></td><td>8.85</td><td>0.97</td></tr>
+            <tr class="lit"><td>NNGP †</td><td>1.21</td><td>1.64</td><td>0.85</td><td>7.57</td><td>0.95</td></tr>
+            <tr class="lit"><td>LatticeKrig †</td><td>1.22</td><td>1.68</td><td>0.87</td><td>7.55</td><td>0.96</td></tr>
+            <tr class="lit"><td>Periodic embedding †</td><td>1.29</td><td>1.79</td><td>0.91</td><td>7.44</td><td>0.93</td></tr>
+            <tr class="lit"><td>MRA †</td><td>1.33</td><td>1.85</td><td>0.94</td><td>8.00</td><td>0.92</td></tr>
+            <tr><td>SVGP, <i>M</i> = 2000</td><td>1.69</td><td>2.20</td><td>1.19</td><td>10.23</td><td>0.90</td></tr>
+            <tr><td>RFF, <i>D</i> = 49,152</td><td>1.87</td><td>2.50</td><td>1.36</td><td>14.37</td><td>0.84</td></tr>
+            <tr class="ours"><td>RWF, single seed</td><td>1.26</td><td>1.65</td><td>0.89</td><td>7.78</td><td>0.92</td></tr>
+            <tr class="ours"><td>RWF, mixture of 3 seeds</td><td>1.24</td><td>1.62</td><td>0.88</td><td><b>7.35</b></td><td>0.94</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-caption">† As published in Heaton et al. (2019); the seven other published methods have RMSE ≥ 1.80 and interval score ≥ 10.3. Against all twelve published methods, the three-seed mixture is second on RMSE and first on interval score; each seed takes 8 minutes on one GPU.</p>
+    </div>
+
+    <div id="uci">
+      <h3 class="title is-4">Regression benchmarks</h3>
+      <div class="content has-text-justified">
+        <p>Test RMSE, mean ± s.d. over 20 random 90/10 splits (5 for Protein). RWF settings are chosen on validation folds inside the training data.</p>
+      </div>
+      <div class="table-container reveal">
+        <table class="table results">
+          <thead>
+            <tr><th>Test RMSE</th><th>Energy</th><th>Concrete</th><th>Airfoil</th><th>Kin8nm</th><th>Protein</th></tr>
+          </thead>
+          <tbody>
+            <tr class="lit"><td>SVGP †</td><td>0.68</td><td>5.92</td><td>5.18</td><td>0.10</td><td>5.40</td></tr>
+            <tr class="lit"><td>Deep GP †</td><td>0.48</td><td>4.55</td><td>3.66</td><td>0.09</td><td>4.35</td></tr>
+            <tr class="lit"><td>A-RKHS †</td><td>0.51</td><td>4.35</td><td>3.25</td><td>0.18</td><td>4.32</td></tr>
+            <tr><td>RFF, same features and solver</td><td>0.455 <small>± 0.063</small></td><td>5.17 <small>± 0.63</small></td><td>1.85 <small>± 0.20</small></td><td>0.074 <small>± 0.003</small></td><td>4.17 <small>± 0.07</small></td></tr>
+            <tr class="ours"><td>RWF</td><td><b>0.415</b> <small>± 0.059</small></td><td><b>4.16</b> <small>± 0.52</small></td><td><b>1.24</b> <small>± 0.17</small></td><td><b>0.070</b> <small>± 0.002</small></td><td><b>3.59</b> <small>± 0.02</small></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-caption">† Baselines as reported in Kumar and Chakraborty (2026). Test NLL of RWF: 0.56, 2.83, 1.63, −1.25, 2.69.</p>
+    </div>
+
+    <div id="signals">
+      <h3 class="title is-4">Non-stationary signals</h3>
+      <div class="content has-text-justified">
+        <p>On a multi-step function (<i>N</i> = 4,200, 5 seeds), RWF reaches RMSE 0.053 and NLL −1.50, ahead of a stationary exact GP (0.056, −1.45), a two-layer deep GP (0.102), SVGP (0.143) and RFF (0.153). An exact GP with the non-stationary Gibbs kernel is more accurate (0.049, −1.84) but takes eleven times longer and scales cubically in <i>N</i>; with sparse variational inference the same kernel reaches only 0.068. On a smooth signal with a localised burst, RWF is 1.6–2.2 times more accurate than an exact Matérn-1/2 GP at every sample size, and 2.5–2.8 times with adaptive octave weights; with adaptive weights it is also the most accurate model on the Donoho–Johnstone Doppler and HeaviSine signals from <i>N</i> = 512.</p>
+      </div>
+      <div class="figure-block reveal">
+        <img class="card-img" src="static/img/burst_fits.png" width="1139" height="335" loading="lazy" alt="Fits of a smooth signal with a localised burst: RWF follows the burst; an exact Matérn-1/2 GP follows it but is noisy everywhere; an exact RBF GP and RFF smooth it away.">
+        <p class="caption">A smooth signal with one high-frequency burst (shaded), <i>N</i> = 256. Error against the truth: RWF with adaptive octave weights 0.021, exact Matérn-1/2 GP 0.060, exact RBF GP and RFF 0.196.</p>
+      </div>
+      <div class="figure-block reveal">
+        <img class="card-img" src="static/img/sample_size.png" width="1141" height="375" loading="lazy" alt="Error against the number of training points on five signals: the burst signal and the Donoho–Johnstone suite.">
+        <p class="caption">Error against the truth versus the number of training points on the burst signal and the Donoho–Johnstone suite, 5 seeds. Adaptive RWF is best on Burst, Doppler and HeaviSine; an exact Matérn-1/2 GP is about 10% better on the piecewise-constant Blocks and Bumps.</p>
+      </div>
+    </div>
+
+    <div id="large">
+      <h3 class="title is-4">Large-scale regression</h3>
+      <div class="content has-text-justified">
+        <p>The large-scale benchmark used for modern GP solvers, from 13,500 to 1.8 million training points, with the splits of Lin et al. (2024). RWF learns its hyperparameters on a subsample and then conditions exactly on every training point in one pass, with no iterative solver.</p>
+      </div>
+      <div class="table-container reveal">
+        <table class="table results">
+          <thead>
+            <tr><th>Test RMSE</th><th>Pol</th><th>Elevators</th><th>Protein</th><th>Kegg</th><th>3DRoad</th><th>Song</th><th>Buzz</th><th>House&shy;Electric</th></tr>
+            <tr class="sub"><th><i>N</i></th><th>13.5k</th><th>14.9k</th><th>41.2k</th><th>43.9k</th><th>391k</th><th>464k</th><th>525k</th><th>1.8M</th></tr>
+          </thead>
+          <tbody>
+            <tr class="lit"><td>SVGP †</td><td>0.10</td><td>0.37</td><td>0.57</td><td>0.10</td><td>0.47</td><td>0.80</td><td>0.32</td><td>0.12</td></tr>
+            <tr class="lit"><td>SGD †</td><td>0.13</td><td>0.38</td><td>0.51</td><td>0.12</td><td>0.11</td><td>0.80</td><td>0.42</td><td>0.09</td></tr>
+            <tr class="lit"><td>SDD †</td><td>0.08</td><td><b>0.35</b></td><td><b>0.50</b></td><td><b>0.08</b></td><td><b>0.04</b></td><td><b>0.75</b></td><td>0.28</td><td><b>0.04</b></td></tr>
+            <tr><td>RFF, same features and solver</td><td>0.11</td><td>0.36</td><td>0.58</td><td>0.09</td><td>0.23</td><td>0.78</td><td>0.45</td><td>0.05</td></tr>
+            <tr class="ours"><td>RWF</td><td><b>0.07</b></td><td><b>0.35</b></td><td>0.52</td><td><b>0.08</b></td><td>0.16</td><td>0.78</td><td><b>0.23</b></td><td><b>0.04</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-caption">† As published in Lin et al. (2024), with hyperparameters fitted beforehand. Mean over 5 splits (3 for HouseElectric), standardised targets. RWF has lower test NLL than SDD on five of these eight datasets, with 95% coverage of 0.92–0.97. Minutes per split on one A100, including hyperparameter learning: Song 4.4, Buzz 4.6, HouseElectric 10.3, against reported solve times of 185, 207 and 48 for SDD, which exclude hyperparameter learning. Bike is omitted because its target is a deterministic function of two input columns.</p>
+    </div>
+
+    <div id="bo">
+      <h3 class="title is-4">Bayesian optimisation and cost</h3>
+      <div class="content has-text-justified">
+        <p>A posterior draw of an RWF model is a whole function that is cheap to evaluate and differentiable, so maximising one draw per step gives Thompson sampling whose cost does not grow with the number of evaluations. One step stays at 1–2.5 s from 10<sup>2</sup> to 10<sup>5</sup> evaluations, while with an exact GP it takes 77 s at 10<sup>4</sup> and 636 s at 3 × 10<sup>4</sup>. Sixteen joint posterior samples on 10<sup>6</sup> points take 0.25 s.</p>
+      </div>
+      <div class="figure-block reveal">
+        <img class="card-img" src="static/img/bo_thompson.webp" width="720" height="459" loading="lazy" alt="Thompson sampling with RWF on the bumped Branin function: posterior draws, the chosen evaluations and the simple regret over iterations.">
+        <p class="caption">Thompson sampling with RWF on the bumped Branin function, which hides its global minimum in a narrow bump.</p>
+      </div>
+      <div class="table-container reveal">
+        <table class="table results">
+          <thead>
+            <tr><th>Final simple regret</th><th>RWF-TS</th><th>RFF-TS</th><th>GP-TS</th><th>GP-EI</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Bumped Branin, 2-D</td><td><b>0.20</b></td><td>1.49</td><td>1.49</td><td>1.52</td></tr>
+            <tr><td>Gramacy, 2-D</td><td><b>1.1 × 10<sup>−3</sup></b></td><td>0.082</td><td>0.043</td><td>0.063</td></tr>
+            <tr><td>Gramacy embedded in 10-D</td><td><b>4.9 × 10<sup>−8</sup></b></td><td>6.0 × 10<sup>−3</sup></td><td>2.2 × 10<sup>−6</sup></td><td>7.0 × 10<sup>−5</sup></td></tr>
+            <tr><td>Hartmann, 6-D</td><td><b>0.060</b></td><td>0.073</td><td>0.091</td><td>0.14</td></tr>
+            <tr><td>Gramacy &amp; Lee, 1-D</td><td>0.19</td><td>0.13</td><td><b>0.038</b></td><td>0.093</td></tr>
+            <tr><td>Levy, 10-D</td><td>3.8</td><td>23.7</td><td>2.1</td><td><b>1.15</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-caption">Mean over 20 seeds. GP baselines are BoTorch defaults; GP-TS uses pathwise samples. On the plain Branin function RFF-TS is best (1.1 × 10<sup>−6</sup> against 0.056 for RWF-TS).</p>
+      <div class="figure-block reveal">
+        <img class="card-img" src="static/img/bo_regret.png" width="1142" height="579" loading="lazy" alt="Simple regret against iteration for RWF, RFF and GP Thompson sampling and GP expected improvement on six benchmark functions.">
+        <p class="caption">Median simple regret over 20 seeds with interquartile bands.</p>
+      </div>
+      <div class="figure-block reveal">
+        <img class="card-img" src="static/img/bo_cost.png" width="928" height="446" loading="lazy" alt="Cost of one Thompson-sampling iteration and of drawing posterior sample paths, against the number of observations and evaluation points.">
+        <p class="caption">Left: one Thompson-sampling iteration. Right: sixteen joint posterior paths at <i>M</i> points.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section is-light" id="theory">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Theory</h2>
+    <div class="columns theory">
+      <div class="column reveal">
+        <div class="thm-media"><img src="static/img/theorem_pd.webp" loading="lazy" alt="Animation: the eigenvalues of the random wavelet kernel matrix stay non-negative as the weighting of locations and scales changes." onerror="this.parentNode.classList.add('is-missing')"></div>
+        <h3>Positive definite</h3>
+        <p>The kernel stays positive semi-definite under any non-negative weighting of locations and scales, so every weighting defines a valid Gaussian process.</p>
+      </div>
+      <div class="column reveal">
+        <div class="thm-media"><img src="static/img/theorem_unbiased.webp" loading="lazy" alt="Animation: the spread of random-feature kernel estimates collapses onto the true kernel as the number of features grows." onerror="this.parentNode.classList.add('is-missing')"></div>
+        <h3>Unbiased</h3>
+        <p>Each random-feature estimate is centred on the true kernel, and its variance falls as one over the number of features.</p>
+      </div>
+      <div class="column reveal">
+        <div class="thm-media"><img src="static/img/theorem_uniform.webp" loading="lazy" alt="Animation: the approximation error surface sinks uniformly over the domain as the number of features grows." onerror="this.parentNode.classList.add('is-missing')"></div>
+        <h3>Uniform convergence</h3>
+        <p>The worst-case error over a compact domain shrinks as one over the square root of the number of features, with high probability.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <div class="bibtex-header">
+      <h2 class="title">BibTeX</h2>
+      <button class="copy-bibtex-btn" type="button" id="copy-bibtex" title="Copy BibTeX to clipboard">
+        <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M320 448v40c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V120c0-13.3 10.7-24 24-24h72v296c0 30.9 25.1 56 56 56h168zm0-344V0H152c-13.3 0-24 10.7-24 24v368c0 13.3 10.7 24 24 24h272c13.3 0 24-10.7 24-24V128H344c-13.2 0-24-10.8-24-24zm120.97-31.03L375.03 7.03A24 24 0 0 0 358.06 0H352v96h96v-6.06a24 24 0 0 0-7.03-16.97z"/></svg>
+        <span class="copy-text">Copy</span>
+      </button>
+    </div>
+<pre id="bibtex-code"><code>@inproceedings{kumar2026scalable,
+  title     = {Scalable Random Wavelet Features: Efficient Non-Stationary
+               Kernel Approximation with Convergence Guarantees},
+  author    = {Kumar, Sawan and Chakraborty, Souvik},
+  booktitle = {International Conference on Learning Representations},
+  year      = {2026},
+  url       = {https://arxiv.org/abs/2602.00987}
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container has-text-centered">
+    <p>Website adapted from the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener">Academic Project Page Template</a>.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var items = document.querySelectorAll('.reveal');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) return;
+  document.documentElement.classList.add('reveal-on');
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+  items.forEach(function (el) { io.observe(el); });
+})();
+</script>
+<script>
+(function () {
+  var btn = document.getElementById('copy-bibtex');
+  var label = btn.querySelector('.copy-text');
+  var code = document.getElementById('bibtex-code');
+  function flash(text) {
+    label.textContent = text;
+    setTimeout(function () { label.textContent = 'Copy'; }, 1800);
+  }
+  function fallback() {
+    var area = document.createElement('textarea');
+    area.value = code.textContent;
+    area.setAttribute('readonly', '');
+    area.style.position = 'fixed';
+    area.style.opacity = '0';
+    document.body.appendChild(area);
+    area.select();
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(area);
+    if (!ok) {
+      var range = document.createRange();
+      range.selectNodeContents(code);
+      var sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+    }
+    flash(ok ? 'Copied' : 'Selected');
+  }
+  btn.addEventListener('click', function () {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(code.textContent).then(function () { flash('Copied'); }, fallback);
+    } else {
+      fallback();
+    }
+  });
+})();
+</script>
+</body>
+</html>
